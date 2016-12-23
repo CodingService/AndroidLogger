@@ -1,37 +1,66 @@
-## Welcome to GitHub Pages
+## INFO
 
-You can use the [editor on GitHub](https://github.com/CodingService/AndroidLogger/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Android上一个简单易用的Log日志库
+- 支持自定义Tag
+- 支持自定义输出样式
+- 支持输出线程
+- 支持输出调用的方法名 文件名 包名 行数
+- 支持输出调用栈层级
+- 支持屏蔽日志
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## TODO :ear_of_rice:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- [x] 更方便的Log配置 [已完成]
+- [x] 无参数的情况支持 [已完成] 
+- [x] 自定义纯文本输出等级 [已完成]
 
-```markdown
-Syntax highlighted code block
+## Usages
 
-# Header 1
-## Header 2
-### Header 3
+````
+dependencies {
+    compile 'cn.service.coding:android-logger:1.0.0'
+}
+````
 
-- Bulleted
-- List
+## 栗子
 
-1. Numbered
-2. List
+```
+KL.config(BuildConfig.DEBUG).setTag("DEBUG").setTextLevel(Log.WARN).setMethodCount(1);
+KL.i();
+String name = "kerison";
+String json = " {\"citys\": [\n" +
+"        {\n" +
+"          \"id\": \"110000\",\n" +
+"          \"full_name\": \"北京市\"\n" +
+"        },\n" +
+"        {\n" +
+"          \"id\": \"120000\",\n" +
+"          \"full_name\": \"天津市\"\n" +
+"        }\n" +
+"      ]}";
 
-**Bold** and _Italic_ and `Code` text
+String xml = "<manifest package=\"cn.kerison.kit.log\"\n" +
+"          xmlns:android=\"http://schemas.android.com/apk/res/android\">\n" +
+"    <application />\n" +
+"</manifest>\n";
 
-[Link](url) and ![Image](src)
+KL.v("hello %s ", name);
+KL.d("hello %s ", name);
+KL.i("hello %s ", name);
+KL.w("hello %s ", name);
+KL.e("hello %s ", name);
+KL.wtf("hello %s ", name);
+KL.json(json);
+KL.xml(xml);
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Log ScreenShot
+个人使用的时候，建议配合自定义自己喜欢的Console的Log颜色和字体，打印出来的效果更明显。
+ - Setting > Editor > Colors&Fonts > Android Logcat
+ - 另存为自己的Scheme
+ - 修改前景色（去掉Use inherited attributes）
+![Log预览](preview/preview.png)
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CodingService/AndroidLogger/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Thanks
+> Migrate from (KLog)[https://github.com/GKerison/KLog]

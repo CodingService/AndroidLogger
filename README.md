@@ -1,4 +1,4 @@
-## INFO
+# AndroidLogger
 
 Android上一个简单易用的Log日志库
 

@@ -1,6 +1,7 @@
 ## INFO
 
 Android上一个简单易用的Log日志库
+
 - 支持自定义Tag
 - 支持自定义输出样式
 - 支持输出线程
@@ -9,10 +10,10 @@ Android上一个简单易用的Log日志库
 - 支持屏蔽日志
 
 
-## TODO :ear_of_rice:
+## TODO
 
 - [x] 更方便的Log配置 [已完成]
-- [x] 无参数的情况支持 [已完成] 
+- [x] 无参数的情况支持 [已完成]
 - [x] 自定义纯文本输出等级 [已完成]
 
 ## Usages
@@ -63,4 +64,4 @@ KL.xml(xml);
 ![Log预览](preview/preview.png)
 
 ## Thanks
-> Migrate from (KLog)[https://github.com/GKerison/KLog]
+> Migrate from [KLog](https://github.com/GKerison/KLog)

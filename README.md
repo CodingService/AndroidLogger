@@ -1,6 +1,6 @@
 # AndroidLogger
 
-Android上一个简单易用的Log日志库
+Android中一个简单易用的Log日志库
 
 - 支持自定义Tag
 - 支持自定义输出样式
